@@ -1,0 +1,550 @@
+/* --- Global Styles & Modern Typography --- */
+:root {
+    --primary-color: #A36A78; /* A warm, muted rose/terracotta */
+    --secondary-color: #D2B48C; /* A soft, warm beige/tan */
+    --accent-color: #6C7A89;    /* A sophisticated grey-blue */
+    --text-dark: #333333;
+    --text-light: #F8F8F8;
+    --background-light: #FBF8F6; /* Off-white, soft background */
+    --border-color: #E0E0E0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Modern sans-serif */
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Elegant serif for headings */
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+h1 { font-size: 3.8em; line-height: 1.1; } /* Adjusted for larger, more impactful hero */
+h2 { font-size: 2.8em; margin-bottom: 25px; color: var(--accent-color); }
+h3 { font-size: 1.8em; color: var(--text-dark); }
+p { font-size: 1.1em; }
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Utility Classes --- */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.05em;
+    font-size: 0.95em;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+}
+.primary-btn:hover {
+    background-color: #8C5C66; /* Slightly darker primary */
+    color: var(--text-light);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below image */
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* --- Header Bar (Top Info Bar) --- */
+.header-bar {
+    background-color: var(--background-light); /* Soft background */
+    color: var(--text-dark);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85em;
+}
+
+.header-bar .icons img {
+    height: 18px;
+    margin-right: 12px;
+    opacity: 0.7;
+}
+
+.header-bar .edit-text {
+    flex-grow: 1;
+    text-align: center;
+    color: #666;
+}
+
+.header-bar .edit-link {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.header-bar .lang-button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+}
+.header-bar .lang-button:hover {
+    background-color: #5C6B79; /* Slightly darker accent */
+}
+
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #FFFFFF; /* Pure white for crispness */
+    padding: 18px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    position: sticky; /* Sticky nav for better UX */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.navbar .nav-links {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Spacing between links */
+}
+
+.navbar a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    font-size: 1em;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after { /* Active state for current section */
+    width: 100%;
+    left: 0;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background-image: url('HOME1.jpg'); /* Placeholder: Replace with high-res couple photo */
+    background-size: cover;
+    background-position: center;
+    height: 700px; /* Taller for more impact */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-align: center;
+    position: relative;
+}
+
+.hero-section::before { /* Subtle overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25); /* Darker, more subtle overlay */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.hero-content .pre-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+    color: var(--secondary-color); /* Matches the warm tone */
+}
+
+.hero-content h1 {
+    font-size: 5.5em; /* Larger, more dramatic */
+    margin-bottom: 20px;
+    line-height: 1;
+    color: var(--text-light);
+}
+
+.hero-content .event-details-hero {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-section .btn {
+    padding: 18px 40px;
+    font-size: 1.1em;
+    border-width: 2px; /* Thicker border */
+}
+
+
+/* --- General Section Styling --- */
+.section {
+    padding: 80px 20px; /* More vertical padding */
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #FFFFFF; /* Sections on white background */
+    margin-bottom: 30px; /* Space between sections */
+    box-shadow: 0 2px 10px var(--shadow-light);
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.section-content {
+    max-width: 800px; /* Content narrower than section */
+    margin: 0 auto;
+}
+
+.section p {
+    color: #555;
+    font-size: 1.05em;
+}
+
+/* --- Storytelling Section (Cerita Kami) --- */
+.storytelling-section {
+    text-align: left; /* Align text left within this section */
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 40px; /* Space between text and image */
+    align-items: center; /* Vertically align items */
+    margin-top: 40px;
+}
+
+.story-image img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Wedding Day Section (Hari Pernikahan) --- */
+.wedding-day-section {
+    background-color: var(--secondary-color); /* Use secondary color as background */
+    color: var(--text-dark);
+}
+
+.wedding-day-section h2 {
+    color: var(--text-dark); /* Headings in this section match text */
+}
+
+.wedding-day-section .section-subtitle {
+    color: var(--primary-color);
+}
+
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.event-item {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px var(--shadow-light);
+    color: var(--text-dark);
+}
+
+.event-item h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.6em;
+}
+
+.wedding-day-section .btn {
+    margin-top: 40px;
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+}
+.wedding-day-section .btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+
+/* --- Gallery Section --- */
+.gallery-section .section-subtitle {
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger image size */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures border-radius applies to image */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* --- Contact Section --- */
+.contact-section .section-subtitle {
+    color: var(--primary-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: #FDFDFD;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2); /* Adjust if using RGB vars */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: auto; /* Button doesn't fill width */
+    align-self: flex-start; /* Align to the left */
+}
+
+
+/* --- Registry Section --- */
+.registry-section .section-subtitle {
+    color: var(--primary-color);
+}
+
+.registry-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; /* More space for logos */
+    margin-top: 40px;
+}
+
+.registry-logo {
+    height: 70px; /* Slightly larger logos */
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.registry-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--accent-color); /* Darker footer for contrast */
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+.footer .back-to-top {
+    display: inline-block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.footer .back-to-top::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--text-light);
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+}
+
+.footer .back-to-top:hover::after {
+    transform: scaleX(1);
+}
+
+.footer .footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 300;
+    font-size: 0.95em;
+}
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85em;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.4em; }
+    p { font-size: 1em; }
+
+    .header-bar {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .header-bar .edit-text {
+        order: 3; /* Move edit text below icons */
+    }
+    .header-bar .icons {
+        margin-bottom: 5px;
+    }
+
+    .navbar .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-section {
+        height: 550px;
+    }
+    .hero-content h1 {
+        font-size: 4em;
+    }
+    .hero-content .event-details-hero {
+        font-size: 1.2em;
+    }
+
+    .section {
+        padding: 60px 15px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        gap: 30px;
+    }
+    .story-image {
+        order: -1; /* Move image above text on mobile */
+    }
+
+    .event-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .contact-form .btn {
+        width: 100%; /* Full width button on mobile */
+        text-align: center;
+    }
+
+    .registry-logos {
+        gap: 25px;
+    }
+    .registry-logo {
+        height: 50px;
+    }
+
+    .footer-links a {
+        display: block; /* Stack links */
+        margin: 5px 0;
+    }
+}
